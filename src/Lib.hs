@@ -2,7 +2,7 @@
 
 module Lib where
 
-data NTurns = Z | N1 | N2 | N3 deriving Show
+data NTurns = Z | N1 | N2 | N3 deriving (Eq, Show)
 
 data Turn = CW | CCW
 
@@ -24,3 +24,5 @@ turn CCW = turnCCW
 
 reduce :: [Turn] -> NTurns
 reduce = foldr turn Z
+
+data Face = Right | Left | Up | Down | Front | Back
